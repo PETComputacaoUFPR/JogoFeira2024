@@ -25,31 +25,30 @@ function ResultScreen:init(window_width, window_height, option)
 
     -- description data
     self.description = {
-        content = option.text,
-        font = love.graphics.newFont("fonts/Minecraft.ttf", 20),
+        content = option.total_text,
+        font = love.graphics.newFont("fonts/Minecraft.ttf", 0.03 * window_height),
         color = {
             red = 255 / 255,
             green = 255 / 255,
             blue = 255 / 255,
             alpha = 1 / 1
         },
-        limit = 0.25 * window_height,
-        x = window_width - 0.1 * window_width - 0.25 * window_height,
-        y = self.title.total_space
+        x = window_width - 0.5 * window_width,
+        y = 0.3 * window_height
     }
 
     -- image data (just a blank rectangle for now)
     self.image = {
-        width = 0.25 * window_height,
-        height = 0.45 * window_height,
+        width = 0.2 * window_width,
+        height = 0.42 * window_height,
         color = {
             red = 255 / 255,
             green = 255 / 255,
             blue = 255 / 255,
             alpha = 1 / 1
         },
-        x = 0.1 * window_width,
-        y = self.title.total_space
+        x = 0.25 * window_width,
+        y = 0.3 * window_height
     }
 
     -- button data
@@ -63,7 +62,7 @@ function ResultScreen:init(window_width, window_height, option)
             alpha = 1 / 1
         },
         x = window_width - 0.15 * window_width,
-        y = window_height - 0.15 * window_height,
+        y = window_height - 0.11 * window_height,
         text = {
             content = "BACK",
             font = love.graphics.newFont("fonts/Minecraft.ttf", 0.04 * window_height),
@@ -98,7 +97,7 @@ function ResultScreen:draw()
 
     -- description
     setColor(self.description.color)
-    love.graphics.printf(self.description.content, self.description.x, self.description.y, self.description.limit, "left")
+    love.graphics.print(self.description.content, self.description.font, self.description.x, self.description.y)
 
     -- back button
     setColor(self.back_button.color)

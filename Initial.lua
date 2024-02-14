@@ -26,7 +26,7 @@ function InitialScreen:init(window_width, window_height)
 
     -- button to start game
     self.start_button = {
-        margin = 0.72 * window_height,
+        margin = 0.8 * window_height,
         width = window_width / 4,
         height = window_height / 7,
         color = {
@@ -50,7 +50,7 @@ function InitialScreen:init(window_width, window_height)
     -- images that shown on initial screen (for now, just blank squares)
     self.images = {
         margin_x = 0.075 * window_width,
-        margin_y = 0.25 * window_height,
+        margin_y = 0.3 * window_height,
         margin_between = 0.20 * window_width,
         width = 0.15 * window_width,
         height = 0.15 * window_width,

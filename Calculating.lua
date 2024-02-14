@@ -14,7 +14,6 @@ function CalculatingScreen:init(window_width, window_height)
         y = 0.1 * window_height,
         width = 0.7 * window_width,
         height = 0.1 * window_height,
-        total_time = 10, -- in seconds
         color_full = {
             red = 255 / 255,
             green = 255 / 255,
@@ -31,8 +30,8 @@ function CalculatingScreen:init(window_width, window_height)
 
     self.texts = {
         {time = 3, content = "Lendo sua mente..."},
-        {time = 6, content = "Entendendo sua personalidade..."},
-        {time = 10, content = "Comparando com nosso banco de dados..."}
+        {time = 3, content = "Entendendo sua personalidade..."},
+        {time = 4, content = "Comparando com nosso banco de dados..."}
     }
 
     self.text = {
@@ -48,8 +47,8 @@ function CalculatingScreen:init(window_width, window_height)
 
     self.image = {
         y = 0.4 * window_height,
-        width = 0.3 * window_width,
-        height = 0.3 * window_height,
+        width = 0.2 * window_width,
+        height = 0.42 * window_height,
         frequency = 0.5
     }
 
@@ -57,6 +56,13 @@ function CalculatingScreen:init(window_width, window_height)
     self.text_pos = 1
     self.bar.progress_width = 0
     self.bar.isComplete = false
+
+    -- calculating total time
+    self.time_left = 0
+    for k, v in pairs(self.texts) do
+        self.time_left = self.time_left + v.time
+    end
+    self.bar.dx = self.bar.width / self.time_left
 
     self.image.color = {
         red = math.random(), 
@@ -69,14 +75,17 @@ end
 
 
 function CalculatingScreen:update(dt)
-    self.time = self.time + dt
     if self.bar.isComplete then
         return
     end
 
+    self.time = self.time + dt
+    self.time_left = self.time_left - dt
+
     -- text
     if self.time > self.texts[self.text_pos].time then
         self.text_pos = self.text_pos + 1
+        self.time = 0
     end
 
     -- color of image
@@ -92,8 +101,8 @@ function CalculatingScreen:update(dt)
     end
 
     -- progress bar
-    self.bar.progress_width = self.bar.progress_width + (self.bar.width / self.bar.total_time) * dt
-    if self.time > self.bar.total_time then
+    self.bar.progress_width = self.bar.progress_width + self.bar.dx * dt
+    if self.time_left < 0 then
         self.bar.progress_width = self.bar.width
         self.bar.isComplete = true
     end
@@ -117,12 +126,12 @@ function CalculatingScreen:draw()
     setColor(self.bar.color_progress)
     love.graphics.rectangle("fill", self.bar.x, self.bar.y, self.bar.progress_width, self.bar.height)
 
+    -- image
+    setColor(self.image.color)
+    love.graphics.rectangle("fill", (self.window_width - self.image.width) / 2, self.image.y, self.image.width, self.image.height)
+
     -- text
     setColor(self.text.color)
     text_x = (self.window_width - self.text.font:getWidth(self.texts[self.text_pos].content)) / 2
     love.graphics.print(self.texts[self.text_pos].content, self.text.font, text_x, self.text.y)
-
-    -- image
-    setColor(self.image.color)
-    love.graphics.rectangle("fill", (self.window_width - self.image.width) / 2, self.image.y, self.image.width, self.image.height)
 end

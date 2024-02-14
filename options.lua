@@ -7,7 +7,11 @@ table.insert(
     {
         name = "Alan Turing",
         image = "images/alanturing.png",
-        text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum placerat feugiat. Mauris eget pulvinar ante, a ultricies risus. Nunc condimentum id massa vitae facilisis. Ut iaculis tellus urna, ut maximus quam ultricies non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer accumsan ornare dui, in tempor velit vestibulum et. Pellentesque viverra ligula in efficitur convallis. Etiam et quam vel est aliquam volutpat eget non leo. Maecenas at interdum nulla."
+        texts = {
+            "text1",
+            "text2",
+            "text3"
+        }
     }
 )
 
@@ -16,7 +20,11 @@ table.insert(
     {
         name = "Ada Lovelace",
         image = "images/adalovelace.png",
-        text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum placerat feugiat. Mauris eget pulvinar ante, a ultricies risus. Nunc condimentum id massa vitae facilisis. Ut iaculis tellus urna, ut maximus quam ultricies non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer accumsan ornare dui, in tempor velit vestibulum et. Pellentesque viverra ligula in efficitur convallis. Etiam et quam vel est aliquam volutpat eget non leo. Maecenas at interdum nulla."
+        texts = {
+            "text1",
+            "text2",
+            "text3"
+        }
     }
 )
 
@@ -25,10 +33,22 @@ table.insert(
     {
         name = "Margaret Hamilton",
         image = "images/margarethamilton.png",
-        text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum placerat feugiat. Mauris eget pulvinar ante, a ultricies risus. Nunc condimentum id massa vitae facilisis. Ut iaculis tellus urna, ut maximus quam ultricies non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer accumsan ornare dui, in tempor velit vestibulum et. Pellentesque viverra ligula in efficitur convallis. Etiam et quam vel est aliquam volutpat eget non leo. Maecenas at interdum nulla."
+        texts = {
+            "text1",
+            "text2",
+            "text3"
+        }
     }
 )
 
 -- stores size of table
 n_options = 0
 for _ in pairs(OPTIONS) do n_options = n_options + 1 end
+
+-- getting all texts in only one
+for key, option in pairs(OPTIONS) do
+    OPTIONS[key].total_text = ""
+    for _, text in pairs(option.texts) do
+        OPTIONS[key].total_text = OPTIONS[key].total_text .. "- " .. text .. "\n\n"
+    end
+end
