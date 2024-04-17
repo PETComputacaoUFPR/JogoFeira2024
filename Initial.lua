@@ -3,7 +3,7 @@
     this screen contains the START_BUTTON to start the game
 ]]
 
-
+local colors = require("colors")
 
 InitialScreen = Class{}
 
@@ -14,14 +14,17 @@ function InitialScreen:init(window_width, window_height)
     -- title that shows in initial screen
     self.title = {
         content = "Jogo da Feira",
-        font = love.graphics.newFont("fonts/Minecraft.ttf", 0.12 * window_height),
-        color = {
-            red = 255 / 255,
-            green = 255 / 255,
-            blue = 255 / 255,
-            alpha = 1 / 1
-        },
+        font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.05 * window_height),
+        color = colors.off_white,
         margin = 50
+    }
+
+    -- subtitle to the initial screen
+    self.content = {
+        content = "2024",
+        font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03 * window_height),
+        color = colors.off_white,
+        margin = 50;
     }
 
     -- button to start game
@@ -38,12 +41,7 @@ function InitialScreen:init(window_width, window_height)
         text = {
             content = "START",
             font = love.graphics.newFont("fonts/Minecraft.ttf", 0.07 * window_height),
-            color = {
-                red = 255 / 255,
-                green = 255 / 255,
-                blue = 255 / 255,
-                alpha = 1 / 1
-            }
+            color = colors.indigo 
         }
     }
 
@@ -54,12 +52,7 @@ function InitialScreen:init(window_width, window_height)
         margin_between = 0.20 * window_width,
         width = 0.15 * window_width,
         height = 0.15 * window_width,
-        color = {
-            red = 255 / 255,
-            green = 255 / 255,
-            blue = 255 / 255,
-            alpha = 1 / 1
-        }
+        color = colors.light_blue
     }
 end
 
@@ -73,7 +66,7 @@ end
 -- draws the screen
 function InitialScreen:draw()
     -- title
-    setColor(self.title.color)
+    setColor(colors.rgba(self.title.color))
     size_title = self.title.font:getWidth(self.title.content)
     love.graphics.print(self.title.content, self.title.font, (self.window_width - size_title) / 2, self.title.margin)
 
