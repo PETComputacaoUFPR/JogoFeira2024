@@ -24,20 +24,15 @@ function InitialScreen:init(window_width, window_height)
         content = "2024",
         font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03 * window_height),
         color = colors.off_white,
-        margin = 50;
+        margin = 100;
     }
 
     -- button to start game
     self.start_button = {
-        margin = 0.8 * window_height,
+        margin = (0.5 * window_height) - window_height / 14,
         width = window_width / 4,
         height = window_height / 7,
-        color = {
-            red = 0 / 255,
-            green = 0 / 255,
-            blue = 255 / 255,
-            alpha = 1 / 1
-        },
+        color = colors.blue,
         text = {
             content = "START",
             font = love.graphics.newFont("fonts/Minecraft.ttf", 0.07 * window_height),
@@ -66,9 +61,14 @@ end
 -- draws the screen
 function InitialScreen:draw()
     -- title
-    setColor(colors.rgba(self.title.color))
+    setColor(self.title.color)
     size_title = self.title.font:getWidth(self.title.content)
     love.graphics.print(self.title.content, self.title.font, (self.window_width - size_title) / 2, self.title.margin)
+
+    -- subtitle
+    setColor(self.content.color)
+    size_content = self.content.font:getWidth(self.content.content)
+    love.graphics.print(self.content.content, self.content.font, (self.window_width-size_title-size_content  / 2), self.content.margin)
 
     -- START_BUTTON "iniciar"
     setColor(self.start_button.color)
@@ -79,9 +79,9 @@ function InitialScreen:draw()
     -- TO-DO: understand better how centralization works (+5)
     love.graphics.print(self.start_button.text.content, self.start_button.text.font, (self.window_width - start_button_text_width) / 2, self.start_button.margin + (self.start_button.height - start_button_text_height) / 2 + 5)
 
-    -- TO-DO: just drawing some rectangles for now
-    setColor(self.images.color)
-    love.graphics.rectangle("fill", self.images.margin_x, self.images.margin_y, self.images.width, self.images.height)
-    love.graphics.rectangle("fill", (self.window_width - self.images.width) / 2, self.images.margin_y, self.images.width, self.images.height)
-    love.graphics.rectangle("fill", self.window_width - self.images.margin_x - self.images.width, self.images.margin_y, self.images.width, self.images.height)
+    -- -- TO-DO: just drawing some rectangles for now
+    -- setColor(self.images.color)
+    -- love.graphics.rectangle("fill", self.images.margin_x, self.images.margin_y, self.images.width, self.images.height)
+    -- love.graphics.rectangle("fill", (self.window_width - self.images.width) / 2, self.images.margin_y, self.images.width, self.images.height)
+    -- love.graphics.rectangle("fill", self.window_width - self.images.margin_x - self.images.width, self.images.margin_y, self.images.width, self.images.height)
 end

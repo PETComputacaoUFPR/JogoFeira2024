@@ -7,18 +7,10 @@ require "options"
 require "Initial"
 require "Result"
 require "Calculating"
+local colors = require "colors"
 
 -- seed for random
 math.randomseed(os.time())
-
--- background color
-BACKGROUND_COLOR = {
-    RED = 150 / 255,
-    GREEN = 0 / 255,
-    BLUE = 205 / 255,
-    ALPHA = 1 / 1
-}
-
 
 function love.load()
     -- window dimensions
@@ -76,7 +68,7 @@ end
 
 function love.draw()
     -- background
-    love.graphics.setBackgroundColor(BACKGROUND_COLOR.RED, BACKGROUND_COLOR.GREEN, BACKGROUND_COLOR.BLUE, BACKGROUND_COLOR.ALPHA)
+    love.graphics.setBackgroundColor(colors.indigo.red, colors.indigo.green, colors.indigo.blue, colors.indigo.alpha);
 
     -- screen elements
     if screen_status == "initial" then 
