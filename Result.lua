@@ -3,6 +3,8 @@
     this screen shows the selected option, and allows to go back to initial screen
 ]]
 
+local colors = require("colors")
+
 ResultScreen = Class{}
 
 -- takes the option selected (see "options.lua" for more)
@@ -85,24 +87,24 @@ end
 -- draws the screen
 function ResultScreen:draw()
     -- image
-    setColor(self.title.color)
+    colors:setColor(self.title.color)
     title_width = self.title.font:getWidth(self.title.content)
     title_height = self.title.font:getHeight(self.title.content)
     title_y_margin = (self.title.total_space - title_height) / 2
     love.graphics.print(self.title.content, self.title.font, (self.window_width - title_width) / 2, title_y_margin)
 
     -- image (TO-DO: just a blank rectangle for now)
-    setColor(self.image.color)
+    colors:setColor(self.image.color)
     love.graphics.rectangle("fill", self.image.x, self.image.y, self.image.width, self.image.height)
 
     -- description
-    setColor(self.description.color)
+    colors:setColor(self.description.color)
     love.graphics.print(self.description.content, self.description.font, self.description.x, self.description.y)
 
     -- back button
-    setColor(self.back_button.color)
+    colors:setColor(self.back_button.color)
     love.graphics.rectangle("fill", self.back_button.x, self.back_button.y, self.back_button.width, self.back_button.height)
-    setColor(self.back_button.text.color)
+    colors:setColor(self.back_button.text.color)
     back_button_text_width = self.back_button.text.font:getWidth(self.back_button.text.content)
     back_button_text_height = self.back_button.text.font:getHeight(self.back_button.text.content)
     -- TO-DO: understand better how centralization works (+5)

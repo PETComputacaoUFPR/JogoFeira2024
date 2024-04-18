@@ -69,24 +69,24 @@ end
 -- draws the screen
 function InitialScreen:draw()
     -- title
-    setColor(self.title.color)
+    colors:setColor(self.title.color)
     size_title = self.title.font:getWidth(self.title.content)
     love.graphics.print(self.title.content, self.title.font, (self.window_width - size_title) / 2, self.title.margin)
 
     -- subtitle
-    setColor(self.content.color)
+    colors:setColor(self.content.color)
     size_content = self.content.font:getWidth(self.content.content)
     love.graphics.print(self.content.content, self.content.font, (self.window_width-size_title-size_content  / 2), self.content.margin)
 
     -- credits
-    setColor(self.credits.color)
+    colors:setColor(self.credits.color)
     size_credits = self.credits.font:getWidth(self.credits.content)
     love.graphics.print(self.credits.content, self.credits.font, (self.window_width - size_credits) - 100, self.credits.margin)
 
     -- START_BUTTON "iniciar"
-    setColor(self.start_button.color)
+    colors:setColor(self.start_button.color)
     love.graphics.rectangle("fill", (self.window_width - self.start_button.width) / 2, self.start_button.margin, self.start_button.width, self.start_button.height)
-    setColor(self.start_button.text.color)
+    colors:setColor(self.start_button.text.color)
     start_button_text_width = self.start_button.text.font:getWidth(self.start_button.text.content)
     start_button_text_height = self.start_button.text.font:getHeight(self.start_button.text.content)
     -- TO-DO: understand better how centralization works (+5)

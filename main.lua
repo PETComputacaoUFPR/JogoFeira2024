@@ -7,6 +7,8 @@ require "options"
 require "Initial"
 require "Result"
 require "Calculating"
+
+-- importing colors
 local colors = require "colors"
 
 -- seed for random
@@ -59,11 +61,6 @@ function love.update(dt)
             calculating_screen:update(dt)
         end
     end
-end
-
--- auxiliary function to more easily set colors
-function setColor(colors)
-    love.graphics.setColor(colors.red, colors.green, colors.blue, colors.alpha)
 end
 
 function love.draw()
