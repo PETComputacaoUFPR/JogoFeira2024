@@ -10,5 +10,9 @@ colors.off_white = { red = 250/255, green = 249/255, blue = 246/255, alpha = 255
 colors.light_blue = { red = 149/255, green = 222/255, blue = 255/255, alpha = 255}
 colors.blue = { red = 24/255, green = 171/255, blue = 237/255, alpha = 255}
 
+function colors:setColor(color)
+    love.graphics.setColor(color.red, color.green, color.blue, color.alpha)
+end
+
 
 return colors

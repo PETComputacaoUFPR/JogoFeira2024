@@ -3,6 +3,8 @@
     in this screen, a "completion bar" is drawn. Once it ends, goes to Result screen
 ]]
 
+local colors = require("colors")
+
 CalculatingScreen = Class{}
 
 function CalculatingScreen:init(window_width, window_height)
@@ -119,19 +121,19 @@ function CalculatingScreen:draw()
     end
 
     -- full bar
-    setColor(self.bar.color_full)
+    colors:setColor(self.bar.color_full)
     love.graphics.rectangle("fill", self.bar.x, self.bar.y, self.bar.width, self.bar.height)
 
     -- progress bar
-    setColor(self.bar.color_progress)
+    colors:setColor(self.bar.color_progress)
     love.graphics.rectangle("fill", self.bar.x, self.bar.y, self.bar.progress_width, self.bar.height)
 
     -- image
-    setColor(self.image.color)
+    colors:setColor(self.image.color)
     love.graphics.rectangle("fill", (self.window_width - self.image.width) / 2, self.image.y, self.image.width, self.image.height)
 
     -- text
-    setColor(self.text.color)
+    colors:setColor(self.text.color)
     text_x = (self.window_width - self.text.font:getWidth(self.texts[self.text_pos].content)) / 2
     love.graphics.print(self.texts[self.text_pos].content, self.text.font, text_x, self.text.y)
 end
