@@ -27,16 +27,24 @@ function InitialScreen:init(window_width, window_height)
         margin = 100;
     }
 
+    -- credits to the initial screen
+    self.credits = {
+        content = "made by PET Computação - UFPR",
+        font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.02 * window_height),
+        color = colors.off_white,
+        margin = window_height - 50;
+    }
+
     -- button to start game
     self.start_button = {
         margin = (0.5 * window_height) - window_height / 14,
-        width = window_width / 4,
+        width = window_width / 5,
         height = window_height / 7,
-        color = colors.blue,
+        color = colors.off_white,
         text = {
             content = "START",
-            font = love.graphics.newFont("fonts/Minecraft.ttf", 0.07 * window_height),
-            color = colors.indigo 
+            font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.04 * window_height),
+            color = colors.purple 
         }
     }
 
@@ -70,6 +78,11 @@ function InitialScreen:draw()
     size_content = self.content.font:getWidth(self.content.content)
     love.graphics.print(self.content.content, self.content.font, (self.window_width-size_title-size_content  / 2), self.content.margin)
 
+    -- credits
+    setColor(self.credits.color)
+    size_credits = self.credits.font:getWidth(self.credits.content)
+    love.graphics.print(self.credits.content, self.credits.font, (self.window_width - size_credits) - 100, self.credits.margin)
+
     -- START_BUTTON "iniciar"
     setColor(self.start_button.color)
     love.graphics.rectangle("fill", (self.window_width - self.start_button.width) / 2, self.start_button.margin, self.start_button.width, self.start_button.height)
@@ -79,9 +92,4 @@ function InitialScreen:draw()
     -- TO-DO: understand better how centralization works (+5)
     love.graphics.print(self.start_button.text.content, self.start_button.text.font, (self.window_width - start_button_text_width) / 2, self.start_button.margin + (self.start_button.height - start_button_text_height) / 2 + 5)
 
-    -- -- TO-DO: just drawing some rectangles for now
-    -- setColor(self.images.color)
-    -- love.graphics.rectangle("fill", self.images.margin_x, self.images.margin_y, self.images.width, self.images.height)
-    -- love.graphics.rectangle("fill", (self.window_width - self.images.width) / 2, self.images.margin_y, self.images.width, self.images.height)
-    -- love.graphics.rectangle("fill", self.window_width - self.images.margin_x - self.images.width, self.images.margin_y, self.images.width, self.images.height)
 end
