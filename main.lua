@@ -72,7 +72,7 @@ function love.update(dt)
 end
 
 function love.draw()
-    -- background
+    love.graphics.setColor(255,255,255)
     -- desenha o grandiente como background
     love.graphics.draw(mesh_r, -0.15*WINDOW_WIDTH, 0, -0.15, 1.15*WINDOW_WIDTH, 1.5*WINDOW_HEIGHT)
 
