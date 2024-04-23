@@ -10,6 +10,7 @@ require "Calculating"
 
 -- importing colors
 local colors = require "colors"
+local mesh = require "mesh"
 
 -- seed for random
 math.randomseed(os.time())
@@ -28,6 +29,13 @@ function love.load()
 
     -- title of game
     love.window.setTitle("JogoDaFeira")
+
+    -- mesh for background
+    mesh_r = mesh:gradientMesh("vertical", 
+            colors:returnColorObject(colors.indigo), 
+            colors:returnColorObject(colors.light_purple),
+            colors:returnColorObject(colors.pink)
+    )
 
     -- loading screens (starts at initial screen)
     screen_status = "initial"
@@ -64,8 +72,9 @@ function love.update(dt)
 end
 
 function love.draw()
-    -- background
-    love.graphics.setBackgroundColor(colors.indigo.red, colors.indigo.green, colors.indigo.blue, colors.indigo.alpha);
+    love.graphics.setColor(255,255,255)
+    -- desenha o grandiente como background
+    love.graphics.draw(mesh_r, -0.15*WINDOW_WIDTH, 0, -0.15, 1.15*WINDOW_WIDTH, 1.5*WINDOW_HEIGHT)
 
     -- screen elements
     if screen_status == "initial" then 
