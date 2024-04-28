@@ -67,7 +67,7 @@ function ResultScreen:init(window_width, window_height, option)
         y = window_height - 0.11 * window_height,
         text = {
             content = "BACK",
-            font = love.graphics.newFont("fonts/Monocraft.ttf", 0.03 * window_height),
+            font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03 * window_height),
             color = {
                 red = 255 / 255,
                 green = 255 / 255,
