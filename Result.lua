@@ -14,8 +14,8 @@ function ResultScreen:init(window_width, window_height, option)
 
     -- title (showing result)
     self.title = {
-        content = "Voce eh ... " .. option.name .. "!",
-        font = love.graphics.newFont("fonts/Minecraft.ttf", 0.08 * window_height),
+        content = "Você é ... " .. option.name .. "!",
+        font = love.graphics.newFont("fonts/Monocraft.ttf", 0.06 * window_height),
         total_space = 0.2 * window_height,
         color = {
             red = 255 / 255,
@@ -28,7 +28,7 @@ function ResultScreen:init(window_width, window_height, option)
     -- description data
     self.description = {
         content = option.total_text,
-        font = love.graphics.newFont("fonts/Minecraft.ttf", 0.03 * window_height),
+        font = love.graphics.newFont("fonts/Monocraft.ttf", 0.02 * window_height),
         color = {
             red = 255 / 255,
             green = 255 / 255,
@@ -67,7 +67,7 @@ function ResultScreen:init(window_width, window_height, option)
         y = window_height - 0.11 * window_height,
         text = {
             content = "BACK",
-            font = love.graphics.newFont("fonts/Minecraft.ttf", 0.04 * window_height),
+            font = love.graphics.newFont("fonts/Monocraft.ttf", 0.03 * window_height),
             color = {
                 red = 255 / 255,
                 green = 255 / 255,

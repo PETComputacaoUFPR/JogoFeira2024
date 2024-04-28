@@ -37,7 +37,7 @@ function CalculatingScreen:init(window_width, window_height)
     }
 
     self.text = {
-        font = love.graphics.newFont("fonts/Minecraft.ttf", 0.04 * window_height),
+        font = love.graphics.newFont("fonts/Monocraft.ttf", 0.04 * window_height),
         y = self.bar.y + self.bar.height + 0.05 * window_height,
         color = {
             red = 255 / 255,
