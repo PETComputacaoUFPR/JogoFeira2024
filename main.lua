@@ -15,6 +15,7 @@ local mesh = require "mesh"
 -- seed for random
 math.randomseed(os.time())
 
+-- begins application
 function love.load()
     -- window dimensions
     love.window.setMode(0, 0)
@@ -37,51 +38,57 @@ function love.load()
             colors:returnColorObject(colors.pink)
     )
 
-    -- loading screens (starts at initial screen)
+    -- loading screen (starts at initial screen)
     screen_status = "initial"
-    initial_screen = InitialScreen(WINDOW_WIDTH, WINDOW_HEIGHT)
+    screen = InitialScreen(WINDOW_WIDTH, WINDOW_HEIGHT)
 
 end
 
+-- defines logic for when something in the screen is clicked
 function love.mousepressed(x, y, button, istouch, presses)
-    if button == 1 then 
-        if screen_status == "initial" and initial_screen:start(x, y) then
-            calculating_screen = CalculatingScreen(WINDOW_WIDTH, WINDOW_HEIGHT)
-            screen_status = "calculating"
-        elseif screen_status == "result" and result_screen:back(x, y) then
-            screen_status = "initial"
-        end
+    -- not left click nor touchscreen
+    if button ~= 1 then
+        return
+    end
+
+    -- button "start" was clicked: initiate "calculation"
+    if screen_status == "initial" and screen:start(x, y) then
+        screen = CalculatingScreen(WINDOW_WIDTH, WINDOW_HEIGHT)
+        screen_status = "calculating"
+    -- button "back" was clicked: go back to initial screen
+    elseif screen_status == "result" and screen:back(x, y) then
+        screen = InitialScreen(WINDOW_WIDTH, WINDOW_HEIGHT)
+        screen_status = "initial"
     end
 end
 
+-- defines logic for when some key is pressed
 function love.keypressed(key, scancode, isrepeat)
+    -- pressing ESC closes the game
     if key == "escape" then
         love.event.quit(0)
     end
 end
 
+-- updates between frames
+-- dt represents time since last frame
 function love.update(dt)
     if screen_status == "calculating" then
-        if calculating_screen:isDone() then
-            result_screen = ResultScreen(WINDOW_WIDTH, WINDOW_HEIGHT, OPTIONS[math.random(n_options)])
+        if screen:isDone() then
+            screen = ResultScreen(WINDOW_WIDTH, WINDOW_HEIGHT, OPTIONS[math.random(n_options)])
             screen_status = "result"
         else
-            calculating_screen:update(dt)
+            screen:update(dt)
         end
     end
 end
 
+-- draws elements in screen
 function love.draw()
     love.graphics.setColor(255,255,255)
     -- desenha o grandiente como background
     love.graphics.draw(mesh_r, -0.15*WINDOW_WIDTH, 0, -0.15, 1.15*WINDOW_WIDTH, 1.5*WINDOW_HEIGHT)
 
     -- screen elements
-    if screen_status == "initial" then 
-        initial_screen:draw()
-    elseif screen_status == "calculating" then
-        calculating_screen:draw()
-    elseif screen_status == "result" then
-        result_screen:draw()
-    end
+    screen:draw()
 end

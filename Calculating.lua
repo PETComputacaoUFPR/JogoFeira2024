@@ -27,6 +27,7 @@ function CalculatingScreen:init(window_width, window_height)
     }
 
     self.text = {
+
         font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03 * window_height),
         y = self.bar.y + self.bar.height + 0.05 * window_height,
         color = colors.off_white
