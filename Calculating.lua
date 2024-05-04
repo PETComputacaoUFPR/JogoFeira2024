@@ -4,6 +4,7 @@
 ]]
 
 local colors = require("colors")
+local options = require("options")
 
 CalculatingScreen = Class{}
 
@@ -33,12 +34,14 @@ function CalculatingScreen:init(window_width, window_height)
         color = colors.off_white
     }
 
-    self.image = {
+    self.imageProperties = {
         y = 0.4 * window_height,
         width = 0.2 * window_width,
         height = 0.42 * window_height,
         frequency = 0.5
     }
+
+    self.image = options
 
     self.time = 0
     self.text_pos = 1
@@ -52,41 +55,44 @@ function CalculatingScreen:init(window_width, window_height)
     end
     self.bar.dx = self.bar.width / self.time_left
 
-    self.image.color = {
-        red = math.random(), 
-        green = math.random(), 
-        blue = math.random(), 
-        alpha = 1
-    }
-    self.image.time_left = self.image.frequency
+    -- self.image.color = {
+    --     red = math.random(), 
+    --     green = math.random(), 
+    --     blue = math.random(), 
+    --     alpha = 1
+    -- }
+
+    for key, option in pairs(self.image) do
+        option.time_left = option.frequency
+    end
 end
 
 
 function CalculatingScreen:update(dt)
-    if self.bar.isComplete then
-        return
-    end
+--     if self.bar.isComplete then
+--         return
+--     end
 
-    self.time = self.time + dt
-    self.time_left = self.time_left - dt
+--     self.time = self.time + dt
+--     self.time_left = self.time_left - dt
 
-    -- text
-    if self.time > self.texts[self.text_pos].time then
-        self.text_pos = self.text_pos + 1
-        self.time = 0
-    end
+--     -- text
+--     if self.time > self.texts[self.text_pos].time then
+--         self.text_pos = self.text_pos + 1
+--         self.time = 0
+--     end
 
-    -- color of image
-    self.image.time_left = self.image.time_left - dt
-    if self.image.time_left <= 0 then
-        self.image.color = {
-            red = math.random(), 
-            green = math.random(), 
-            blue = math.random(), 
-            alpha = 1
-        }
-        self.image.time_left = self.image.frequency
-    end
+--     -- color of image
+--     self.image.time_left = self.image.time_left - dt
+--     if self.image.time_left <= 0 then
+--         self.image.color = {
+--             red = math.random(), 
+--             green = math.random(), 
+--             blue = math.random(), 
+--             alpha = 1
+--         }
+--         self.image.time_left = self.image.frequency
+--     end
 
     -- progress bar
     self.bar.progress_width = self.bar.progress_width + self.bar.dx * dt
@@ -96,7 +102,7 @@ function CalculatingScreen:update(dt)
     end
 end
 
--- returns is progress bar is complete
+-- -- returns is progress bar is complete
 function CalculatingScreen:isDone()
     return self.bar.isComplete
 end
@@ -115,8 +121,15 @@ function CalculatingScreen:draw()
     love.graphics.rectangle("fill", self.bar.x, self.bar.y, self.bar.progress_width, self.bar.height)
 
     -- image
-    colors:setColor(self.image.color)
-    love.graphics.rectangle("fill", (self.window_width - self.image.width) / 2, self.image.y, self.image.width, self.image.height)
+    --colors:setColor(self.image.color)
+    --love.graphics.rectangle("fill", (self.window_width - self.image.width) / 2, self.image.y, self.image.width, self.image.height)
+
+    for key, option in pairs(self.image) do
+        if key == "total_text" then
+            colors:setColor(self.text.color)
+            love.graphics.newImage(option.image):draw((self.window_width - self.imageProperties.width) / 2, self.imageProperties.y, 0, self.imageProperties.width / option.width, self.imageProperties.height / option.height)
+        end
+    end
 
     -- text
     colors:setColor(self.text.color)

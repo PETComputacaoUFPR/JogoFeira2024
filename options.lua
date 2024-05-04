@@ -41,6 +41,47 @@ table.insert(
     }
 )
 
+table.insert(
+    OPTIONS,
+    {
+        name = "Carol Shaw",
+        image = "images/carolshaw.png",
+        texts = {
+            "text1",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Grace Hopper",
+        image = "images/gracehopper.png",
+        texts = {
+            "text1",
+            "text2",
+            "text3"
+        }
+    }
+
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Linus Torvalds",
+        image = "images/linustorvalds.png",
+        texts = {
+            "text1",
+            "text2",
+            "text3"
+        }
+    }
+
+)
+
 -- stores size of table
 n_options = 0
 for _ in pairs(OPTIONS) do n_options = n_options + 1 end
@@ -52,3 +93,5 @@ for key, option in pairs(OPTIONS) do
         OPTIONS[key].total_text = OPTIONS[key].total_text .. "- " .. text .. "\n\n"
     end
 end
+
+return OPTIONS

@@ -77,7 +77,7 @@ function love.update(dt)
         if screen:isDone() then
             screen = ResultScreen(WINDOW_WIDTH, WINDOW_HEIGHT, OPTIONS[math.random(n_options)])
             screen_status = "result"
-        else
+        -- else
             screen:update(dt)
         end
     end
