@@ -15,26 +15,16 @@ function ResultScreen:init(window_width, window_height, option)
     -- title (showing result)
     self.title = {
         content = "Você é ... " .. option.name .. "!",
-        font = love.graphics.newFont("fonts/Monocraft.ttf", 0.06 * window_height),
+        font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.04 * window_height),
         total_space = 0.2 * window_height,
-        color = {
-            red = 255 / 255,
-            green = 255 / 255,
-            blue = 255 / 255,
-            alpha = 1 / 1
-        },
+        color = colors.off_white
     }
 
     -- description data
     self.description = {
         content = option.total_text,
-        font = love.graphics.newFont("fonts/Monocraft.ttf", 0.02 * window_height),
-        color = {
-            red = 255 / 255,
-            green = 255 / 255,
-            blue = 255 / 255,
-            alpha = 1 / 1
-        },
+        font = love.graphics.newFont("fonts/Montserrat/static/Montserrat-Medium.ttf", 0.03 * window_height),
+        color = colors.off_white,
         x = window_width - 0.5 * window_width,
         y = 0.3 * window_height
     }
@@ -55,25 +45,15 @@ function ResultScreen:init(window_width, window_height, option)
 
     -- button data
     self.back_button = {
-        width = 0.1 * window_width,
+        width = 0.12 * window_width,
         height = 0.1 * window_height,
-        color = {
-            red = 0 / 255,
-            green = 0 / 255,
-            blue = 255 / 255,
-            alpha = 1 / 1
-        },
-        x = window_width - 0.15 * window_width,
-        y = window_height - 0.11 * window_height,
+        color = colors.off_white,
+        x = window_width - 0.17 * window_width,
+        y = window_height - 0.14 * window_height,
         text = {
             content = "BACK",
-            font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03 * window_height),
-            color = {
-                red = 255 / 255,
-                green = 255 / 255,
-                blue = 255 / 255,
-                alpha = 1 / 1
-            }
+            font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03* window_height),
+            color = colors.purple 
         }
     }
 end

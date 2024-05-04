@@ -15,19 +15,9 @@ function CalculatingScreen:init(window_width, window_height)
         x = 0.15 * window_width,
         y = 0.1 * window_height,
         width = 0.7 * window_width,
-        height = 0.1 * window_height,
-        color_full = {
-            red = 255 / 255,
-            green = 255 / 255,
-            blue = 255 / 255,
-            alpha = 1 / 1
-        },
-        color_progress = {
-            red = 0 / 255,
-            green = 255 / 255,
-            blue = 255/ 255,
-            alpha = 1 / 1
-        }
+        height = 0.04 * window_height,
+        color_full = colors.off_white,
+        color_progress = colors.pink
     }
 
     self.texts = {
@@ -37,14 +27,10 @@ function CalculatingScreen:init(window_width, window_height)
     }
 
     self.text = {
-        font = love.graphics.newFont("fonts/Monocraft.ttf", 0.04 * window_height),
+
+        font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03 * window_height),
         y = self.bar.y + self.bar.height + 0.05 * window_height,
-        color = {
-            red = 255 / 255,
-            green = 255 / 255,
-            blue = 255 / 255,
-            alpha = 1 / 1
-        }
+        color = colors.off_white
     }
 
     self.image = {
