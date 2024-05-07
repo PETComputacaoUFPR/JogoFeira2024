@@ -4,6 +4,7 @@
 ]]
 
 local colors = require("colors")
+require "Button"
 
 ResultScreen = Class{}
 
@@ -44,25 +45,24 @@ function ResultScreen:init(window_width, window_height, option)
     }
 
     -- button data
-    self.back_button = {
-        width = 0.12 * window_width,
-        height = 0.1 * window_height,
-        color = colors.off_white,
-        x = window_width - 0.17 * window_width,
-        y = window_height - 0.14 * window_height,
-        text = {
+    self.back_button = Button(
+        window_width - 0.17 * window_width,
+        window_height - 0.14 * window_height,
+        0.12 * window_width,
+        0.1 * window_height,
+        colors.off_white,
+        {
             content = "BACK",
-            font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03* window_height),
-            color = colors.purple 
+            font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03 * window_height),
+            color = colors.purple
         }
-    }
+    )
 end
 
 -- checks if back button was clicked
 function ResultScreen:back(x, y)
-    return (x >= self.back_button.x and x <= self.back_button.x + self.back_button.width) and (y >= self.back_button.y and y <= self.back_button.y + self.back_button.width)
+    return self.back_button:clicked(x, y)
 end
-
 
 -- draws the screen
 function ResultScreen:draw()
@@ -82,11 +82,5 @@ function ResultScreen:draw()
     love.graphics.print(self.description.content, self.description.font, self.description.x, self.description.y)
 
     -- back button
-    colors:setColor(self.back_button.color)
-    love.graphics.rectangle("fill", self.back_button.x, self.back_button.y, self.back_button.width, self.back_button.height)
-    colors:setColor(self.back_button.text.color)
-    back_button_text_width = self.back_button.text.font:getWidth(self.back_button.text.content)
-    back_button_text_height = self.back_button.text.font:getHeight(self.back_button.text.content)
-    -- TO-DO: understand better how centralization works (+5)
-    love.graphics.print(self.back_button.text.content, self.back_button.text.font, self.back_button.x + (self.back_button.width - back_button_text_width) / 2, self.back_button.y + (self.back_button.height - back_button_text_height) / 2 + 5)
+    self.back_button:draw()
 end
