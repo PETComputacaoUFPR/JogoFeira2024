@@ -12,6 +12,8 @@ function InitialScreen:init(window_width, window_height)
     self.window_width = window_width
     self.window_height = window_height
 
+    -- EDITABLE PARAMETERS (all of them)
+
     -- title that shows in initial screen
     self.title = {
         content = "Jogo da Feira",
