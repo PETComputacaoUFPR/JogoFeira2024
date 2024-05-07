@@ -2,6 +2,7 @@
     Defines the Progress Bar, used in the Calculating Screen
 ]]
 
+local colors = require("colors")
 ProgressBar = Class{}
 
 -- creates progress bar object
@@ -19,10 +20,19 @@ function ProgressBar:init(x, y, width, height, color_background, color_progress,
    self.color_progress = color_progress
 
    self.progress_width = 0
-   self.time_left = total_time
-   -- how much the bar should move per unit of second
-   self.velocity = width / total_time
    self.complete = false
+
+   -- if total_time is not defined, set it later in ProgressBar:set_time
+   if not total_time then
+      self.velocity = 0
+   else
+      self.velocity = width / total_time
+   end
+end
+
+-- sets velocity of progress bar based in total_time
+function ProgressBar:set_velocity(total_time)
+   self.velocity = self.width / total_time
 end
 
 -- updates progres bar (moves progress bar by dt units of time)
@@ -30,15 +40,9 @@ function ProgressBar:update(dt)
    if self.complete then
       return
    end
-   self.time_left = self.time_left - dt
-   if self.time_left <= 0 then
-      self.complete = true
-      self.progress_width = self.width
-   end
-   else
-      self.progress_width = self.progress_width + self.velocity * dt
-   end
-return
+   self.progress_width = self.progress_width + self.velocity * dt
+   self.complete = (self.progress_width >= self.width)  -- progress is complete if both bars have same size
+end
 
 -- returns true if bar is complete; false otherwise
 function ProgressBar:is_complete()
@@ -53,7 +57,7 @@ function ProgressBar:draw()
 
    -- progress bar
    colors:setColor(self.color_progress)
-   love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
+   love.graphics.rectangle("fill", self.x, self.y, self.progress_width, self.height)
 end
 
 

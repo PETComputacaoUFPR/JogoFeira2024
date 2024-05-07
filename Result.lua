@@ -13,6 +13,7 @@ function ResultScreen:init(window_width, window_height, option)
     self.window_width = window_width
     self.window_height = window_height
 
+    -- EDITABLE PARAMETERS (all of them)
     -- title (showing result)
     self.title = {
         content = "Você é ... " .. option.name .. "!",
