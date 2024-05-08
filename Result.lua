@@ -5,6 +5,7 @@
 
 local colors = require("colors")
 require "Button"
+require "ImageObj"
 
 ResultScreen = Class{}
 
@@ -31,19 +32,14 @@ function ResultScreen:init(window_width, window_height, option)
         y = 0.3 * window_height
     }
 
-    -- image data (just a blank rectangle for now)
-    self.image = {
-        width = 0.2 * window_width,
-        height = 0.42 * window_height,
-        color = {
-            red = 255 / 255,
-            green = 255 / 255,
-            blue = 255 / 255,
-            alpha = 1 / 1
-        },
-        x = 0.25 * window_width,
-        y = 0.3 * window_height
-    }
+    -- image 
+    self.image = ImageObj(
+        option.path,
+        0.25 * window_width,
+        0.3 * window_height,
+        0.2 * window_width,
+        0.42 * window_height
+    )
 
     -- button data
     self.back_button = Button(
@@ -67,16 +63,15 @@ end
 
 -- draws the screen
 function ResultScreen:draw()
-    -- image
+    -- title
     colors:setColor(self.title.color)
     title_width = self.title.font:getWidth(self.title.content)
     title_height = self.title.font:getHeight(self.title.content)
     title_y_margin = (self.title.total_space - title_height) / 2
     love.graphics.print(self.title.content, self.title.font, (self.window_width - title_width) / 2, title_y_margin)
 
-    -- image (TO-DO: just a blank rectangle for now)
-    colors:setColor(self.image.color)
-    love.graphics.rectangle("fill", self.image.x, self.image.y, self.image.width, self.image.height)
+    -- image 
+    self.image:draw()
 
     -- description
     colors:setColor(self.description.color)

@@ -5,12 +5,14 @@
 
 local colors = require("colors")
 require "ProgressBar"
+require "ImageObj"
 
 CalculatingScreen = Class{}
 
-function CalculatingScreen:init(window_width, window_height)
+function CalculatingScreen:init(window_width, window_height, options)
     self.window_width = window_width
     self.window_height = window_height
+    self.options = options
 
     -- EDITABLE PARAMETERS
     self.bar = ProgressBar(
@@ -35,19 +37,15 @@ function CalculatingScreen:init(window_width, window_height)
         color = colors.off_white
     }
 
-    -- TO-DO: change for images in final version
-    self.image = {
+    -- temporary data to create images
+    -- assumes image is drawn in middle of screen in the horizontal axis
+    image_data = {
         y = 0.4 * window_height,
         width = 0.2 * window_width,
         height = 0.42 * window_height,
         frequency = 0.5
     }
-    self.image.color = {
-        red = math.random(), 
-        green = math.random(), 
-        blue = math.random(), 
-        alpha = 1
-    }
+
 
 
     -- NON EDITABLE PARAMETERS 
@@ -60,9 +58,23 @@ function CalculatingScreen:init(window_width, window_height)
     end 
     self.bar:set_velocity(self.texts[#(self.texts)].time)
 
-    self.image.time_left = self.image.frequency
+    self.image_data  = {
+        frequency = image_data.frequency,
+        time_left = image_data.frequency,
+        pos = math.random(#(self.options))
+    }
+    -- loading all images files (calling newImage function is slow, so it's more time efficient this way)
+    self.images = {}
+    for i=1, #(self.options) do
+        self.images[i] = ImageObj(
+            self.options[i].path,
+            (window_width - image_data.width) / 2,
+            image_data.y,
+            image_data.width,
+            image_data.height
+        )
+    end
 end
-
 
 function CalculatingScreen:update(dt)
     if self.bar:is_complete() then
@@ -76,16 +88,11 @@ function CalculatingScreen:update(dt)
         self.text_pos = self.text_pos + 1
     end
 
-    -- color of image
-    self.image.time_left = self.image.time_left - dt
-    if self.image.time_left <= 0 then
-        self.image.color = {
-            red = math.random(), 
-            green = math.random(), 
-            blue = math.random(), 
-            alpha = 1
-        }
-        self.image.time_left = self.image.frequency
+    -- image
+    self.image_data.time_left = self.image_data.time_left - dt
+    if self.image_data.time_left <= 0 then
+        self.image_data.pos = math.random(#(self.options))
+        self.image_data.time_left = self.image_data.frequency
     end
 
     self.bar:update(dt)
@@ -105,8 +112,7 @@ function CalculatingScreen:draw()
     self.bar:draw()
 
     -- image
-    colors:setColor(self.image.color)
-    love.graphics.rectangle("fill", (self.window_width - self.image.width) / 2, self.image.y, self.image.width, self.image.height)
+    self.images[self.image_data.pos]:draw()
 
     -- text
     colors:setColor(self.text.color)
