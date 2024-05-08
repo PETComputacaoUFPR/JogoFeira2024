@@ -53,7 +53,7 @@ function love.mousepressed(x, y, button, istouch, presses)
 
     -- button "start" was clicked: initiate "calculation"
     if screen_status == "initial" and screen:start(x, y) then
-        screen = CalculatingScreen(WINDOW_WIDTH, WINDOW_HEIGHT)
+        screen = CalculatingScreen(WINDOW_WIDTH, WINDOW_HEIGHT, OPTIONS)
         screen_status = "calculating"
     -- button "back" was clicked: go back to initial screen
     elseif screen_status == "result" and screen:back(x, y) then
@@ -75,7 +75,7 @@ end
 function love.update(dt)
     if screen_status == "calculating" then
         if screen:isDone() then
-            screen = ResultScreen(WINDOW_WIDTH, WINDOW_HEIGHT, OPTIONS[math.random(n_options)])
+            screen = ResultScreen(WINDOW_WIDTH, WINDOW_HEIGHT, OPTIONS[math.random(#(OPTIONS))])
             screen_status = "result"
         else
             screen:update(dt)
