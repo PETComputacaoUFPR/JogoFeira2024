@@ -6,7 +6,7 @@ table.insert(
     OPTIONS, 
     {
         name = "Alan Turing",
-        image = "images/alanturing.png",
+        path = "images/alan_turing.jpg",
         texts = {
             "text1",
             "text2",
@@ -19,7 +19,7 @@ table.insert(
     OPTIONS,
     {
         name = "Ada Lovelace",
-        image = "images/adalovelace.png",
+        path = "images/ada_lovelace.jpg",
         texts = {
             "text1",
             "text2",
@@ -32,7 +32,7 @@ table.insert(
     OPTIONS,
     {
         name = "Margaret Hamilton",
-        image = "images/margarethamilton.png",
+        path = "images/margaret_hamilton.jpg",
         texts = {
             "text1",
             "text2",
@@ -40,6 +40,7 @@ table.insert(
         }
     }
 )
+
 
 -- stores size of table
 n_options = 0
