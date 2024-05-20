@@ -21,9 +21,9 @@ table.insert(
         name = "Ada Lovelace",
         path = "images/ada_lovelace.jpg",
         texts = {
-            "text1",
-            "text2",
-            "text3"
+            "Primeira programadora da história.",
+            "Fez o primeiro algoritmo para a máquina de Babbage.",
+            "Filha do poeta Lord Byron."
         }
     }
 )
