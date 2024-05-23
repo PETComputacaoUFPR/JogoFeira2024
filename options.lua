@@ -9,7 +9,7 @@ table.insert(
         path = "images/alan_turing.jpg",
         texts = {
             "Pai da Ciência da Computação.",
-            "Fez um trabalho essencial desvendando a máquina Enigma nazista.",
+            "Fez um trabalho essencial contra os nazistas.",
             "Sofreu perseguição por ser homossexual."
         }
     }
@@ -36,7 +36,7 @@ table.insert(
         texts = {
             "Escreveu o código de bordo do Apollo 11.",
             "Cientista da computação formada em matemática.",
-            "Levava sua filha para o trabalho ocasionalmente, tendo jornada dupla."
+            "Levava sua filha para o trabalho ocasionalmente."
         }
     }
 )
@@ -47,9 +47,9 @@ table.insert(
         name = "Alexandra Elbakyan",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Criadora do site Sci-Hub, que dá acesso livre a milhões de artigos científicos.",
+            "Criadora do site Sci-Hub.",
             "Conhecida como a mãe da pirataria científica.",
-            "Sofreu perseguição de empresas e governos, mas é uma heroína para muitos."
+            "Sofreu perseguição de empresas."
         }
     }
 )
@@ -60,7 +60,7 @@ table.insert(
         name = "Charles Babbage",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Desenvolveu a máquina analítica, considerada o primeiro computador.",
+            "Desenvolveu a máquina analítica, o primeiro computador.",
             "Trabalhou junto de Ada Lovelace.",
             "Cientista, matemático, engenheiro e inventor."
         }
@@ -87,8 +87,8 @@ table.insert(
         path = "images/margaret_hamilton.jpg",
         texts = {
             "Criador do linux e do git.",
-            "Mestre em Ciência da Computação e engenheiro de software.",
-            "Nascido na Finlandia e graduado pela Universidade de Helsinki."
+            "Mestre em Ciência da Computação.",
+            "Graduado pela Universidade de Helsinki."
         }
     }
 )
