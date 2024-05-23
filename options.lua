@@ -8,9 +8,9 @@ table.insert(
         name = "Alan Turing",
         path = "images/alan_turing.jpg",
         texts = {
-            "text1",
-            "text2",
-            "text3"
+            "Pai da Ciência da Computação.",
+            "Fez um trabalho essencial desvendando a máquina Enigma nazista.",
+            "Sofreu perseguição por ser homossexual."
         }
     }
 )
@@ -34,14 +34,181 @@ table.insert(
         name = "Margaret Hamilton",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "text1",
+            "Escreveu o código de bordo do Apollo 11.",
             "text2",
             "text3"
         }
     }
 )
 
+table.insert(
+    OPTIONS,
+    {
+        name = "Alexandra Elbakyan",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
 
+table.insert(
+    OPTIONS,
+    {
+        name = "Charles Babbage",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Bill Gates",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Linus Torvalds",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Tim Berners-Lee",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Hedy Lamarr",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Mary Kenneth Keller",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Frances Allen",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Edith Ranzini",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Susan Kare",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "Grace Hopper",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "John Carmack",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
+
+table.insert(
+    OPTIONS,
+    {
+        name = "George Boole",
+        path = "images/margaret_hamilton.jpg",
+        texts = {
+            "Escreveu o código de bordo do Apollo 11.",
+            "text2",
+            "text3"
+        }
+    }
+)
 -- stores size of table
 n_options = 0
 for _ in pairs(OPTIONS) do n_options = n_options + 1 end
