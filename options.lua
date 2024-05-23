@@ -35,8 +35,8 @@ table.insert(
         path = "images/margaret_hamilton.jpg",
         texts = {
             "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Cientista da computação formada em matemática.",
+            "Levava sua filha para o trabalho ocasionalmente, tendo jornada dupla."
         }
     }
 )
@@ -47,9 +47,9 @@ table.insert(
         name = "Alexandra Elbakyan",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Criadora do site Sci-Hub, que dá acesso livre a milhões de artigos científicos.",
+            "Conhecida como a mãe da pirataria científica.",
+            "Sofreu perseguição de empresas e governos, mas é uma heroína para muitos."
         }
     }
 )
@@ -60,9 +60,9 @@ table.insert(
         name = "Charles Babbage",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Desenvolveu a máquina analítica, considerada o primeiro computador.",
+            "Trabalhou junto de Ada Lovelace.",
+            "Cientista, matemático, engenheiro e inventor."
         }
     }
 )
@@ -73,9 +73,9 @@ table.insert(
         name = "Bill Gates",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Criador da Microsoft.",
+            "Segundo homem mais rico do mundo.",
+            "Filantropo, doou bilhões de dólares para caridade."
         }
     }
 )
@@ -86,9 +86,9 @@ table.insert(
         name = "Linus Torvalds",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Criador do linux e do git.",
+            "Mestre em Ciência da Computação e engenheiro de software.",
+            "Nascido na Finlandia e graduado pela Universidade de Helsinki."
         }
     }
 )
