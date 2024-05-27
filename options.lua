@@ -99,9 +99,9 @@ table.insert(
         name = "Tim Berners-Lee",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Criou a World Wide Web (www).",
+            "Criou o primeiro navegador web.",
+            "Recebeu o premio Turing em 2016."
         }
     }
 )
@@ -112,9 +112,9 @@ table.insert(
         name = "Hedy Lamarr",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Conhecida como mãe do Wi-fi.",
+            "Atriz e inventora austríaca.",
+            "Inventou o sistema base dos celulares."
         }
     }
 )
@@ -125,9 +125,9 @@ table.insert(
         name = "Mary Kenneth Keller",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Primeira PhD em Ciência da Computação.",
+            "Feira nascida nos Estados Unidos.",
+            "Militante pelos direitos das mulheres."
         }
     }
 )
@@ -138,9 +138,9 @@ table.insert(
         name = "Frances Allen",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Primeira mulher a ganhar o prêmio Turing.",
+            "Contribuiu para a otimização e compilação de códigos.",
+            "Trabalhou para a IBM e para o governo dos EUA."
         }
     }
 )
@@ -151,9 +151,9 @@ table.insert(
         name = "Edith Ranzini",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Engenheira brasileira formada pela USP.",
+            "Desenvolveu o primeiro computador brasileiro.",
+            "Esse computador foi chamado Patinho Feio"
         }
     }
 )
@@ -164,9 +164,9 @@ table.insert(
         name = "Susan Kare",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Designer para a Apple.",
+            "Desenvolvou os ícones do Macintosh.",
+            "Criou ícones como a lixeira e o balde de tinta."
         }
     }
 )
@@ -177,9 +177,9 @@ table.insert(
         name = "Grace Hopper",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Almirante da Marinha dos EUA.",
+            "Criou a linguagem COBOL.",
+            "Phd em matemática pela Universidade de Yale."
         }
     }
 )
@@ -190,9 +190,9 @@ table.insert(
         name = "John Carmack",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Criador do jogo Doom.",
+            "Grande defensor do software livre.",
+            "Co-fundador da id Software."
         }
     }
 )
@@ -203,9 +203,9 @@ table.insert(
         name = "George Boole",
         path = "images/margaret_hamilton.jpg",
         texts = {
-            "Escreveu o código de bordo do Apollo 11.",
-            "text2",
-            "text3"
+            "Matemático e filósofo inglês.",
+            "Criador da álgebra booleana.",
+            "Influenciou a lógica e a computação."
         }
     }
 )
