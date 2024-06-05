@@ -45,7 +45,7 @@ table.insert(
     OPTIONS,
     {
         name = "Alexandra Elbakyan",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/alexandra_elbakyan.jpg",
         texts = {
             "Criadora do site Sci-Hub.",
             "Conhecida como a mãe da pirataria científica.",
@@ -58,7 +58,7 @@ table.insert(
     OPTIONS,
     {
         name = "Charles Babbage",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/charles_babbage.jpg",
         texts = {
             "Desenvolveu a máquina analítica, o primeiro computador.",
             "Trabalhou junto de Ada Lovelace.",
@@ -71,7 +71,7 @@ table.insert(
     OPTIONS,
     {
         name = "Bill Gates",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/bill_gates.jpg",
         texts = {
             "Criador da Microsoft.",
             "Segundo homem mais rico do mundo.",
@@ -84,7 +84,7 @@ table.insert(
     OPTIONS,
     {
         name = "Linus Torvalds",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/linus_torvalds.jpg",
         texts = {
             "Criador do linux e do git.",
             "Mestre em Ciência da Computação.",
@@ -97,7 +97,7 @@ table.insert(
     OPTIONS,
     {
         name = "Tim Berners-Lee",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/tim_berners_lee.jpg",
         texts = {
             "Criou a World Wide Web (www).",
             "Criou o primeiro navegador web.",
@@ -110,7 +110,7 @@ table.insert(
     OPTIONS,
     {
         name = "Hedy Lamarr",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/hedy_lamarr.jpg",
         texts = {
             "Conhecida como mãe do Wi-fi.",
             "Atriz e inventora austríaca.",
@@ -123,7 +123,7 @@ table.insert(
     OPTIONS,
     {
         name = "Mary Kenneth Keller",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/mary_kenneth_keller.jpg",
         texts = {
             "Primeira PhD em Ciência da Computação.",
             "Feira nascida nos Estados Unidos.",
@@ -136,7 +136,7 @@ table.insert(
     OPTIONS,
     {
         name = "Frances Allen",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/frances_allen.jpg",
         texts = {
             "Primeira mulher a ganhar o prêmio Turing.",
             "Contribuiu para a otimização e compilação de códigos.",
@@ -149,7 +149,7 @@ table.insert(
     OPTIONS,
     {
         name = "Edith Ranzini",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/edith_ranzini.jpg",
         texts = {
             "Engenheira brasileira formada pela USP.",
             "Desenvolveu o primeiro computador brasileiro.",
@@ -162,7 +162,7 @@ table.insert(
     OPTIONS,
     {
         name = "Susan Kare",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/susan_kare.jpg",
         texts = {
             "Designer para a Apple.",
             "Desenvolvou os ícones do Macintosh.",
@@ -175,7 +175,7 @@ table.insert(
     OPTIONS,
     {
         name = "Grace Hopper",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/grace_hopper.jpg",
         texts = {
             "Almirante da Marinha dos EUA.",
             "Criou a linguagem COBOL.",
@@ -188,7 +188,7 @@ table.insert(
     OPTIONS,
     {
         name = "John Carmack",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/john_carmack.jpg",
         texts = {
             "Criador do jogo Doom.",
             "Grande defensor do software livre.",
@@ -201,7 +201,7 @@ table.insert(
     OPTIONS,
     {
         name = "George Boole",
-        path = "images/margaret_hamilton.jpg",
+        path = "images/george_boole.jpg",
         texts = {
             "Matemático e filósofo inglês.",
             "Criador da álgebra booleana.",
