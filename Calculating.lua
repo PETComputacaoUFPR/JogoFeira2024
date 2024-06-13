@@ -25,9 +25,9 @@ function CalculatingScreen:init(window_width, window_height, options)
     )
 
     self.texts = {
-        {time = 3, content = "Lendo sua mente..."},
-        {time = 3, content = "Entendendo sua personalidade..."},
-        {time = 4, content = "Comparando com nosso banco de dados..."}
+        {time = 1.5, content = "Lendo sua mente..."},
+        {time = 1.5, content = "Entendendo sua personalidade..."},
+        {time = 3, content = "Comparando com nosso banco de dados..."}
     }
 
     self.text = {

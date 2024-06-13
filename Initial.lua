@@ -19,7 +19,7 @@ function InitialScreen:init(window_width, window_height)
         content = "Jogo da Feira",
         font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.05 * window_height),
         color = colors.off_white,
-        margin = 50
+        margin = 0.046 * window_height
     }
 
     -- subtitle to the initial screen
@@ -27,7 +27,7 @@ function InitialScreen:init(window_width, window_height)
         content = "2024",
         font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03 * window_height),
         color = colors.off_white,
-        margin = 100;
+        margin = 0.092 * window_height
     }
 
     -- credits to the initial screen
@@ -35,7 +35,7 @@ function InitialScreen:init(window_width, window_height)
         content = "made by PET Computação - UFPR",
         font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.02 * window_height),
         color = colors.off_white,
-        margin = window_height - 50;
+        margin = window_height - 0.046 * window_height
     }
 
     -- button to start game
@@ -84,7 +84,7 @@ function InitialScreen:draw()
     -- credits
     colors:setColor(self.credits.color)
     size_credits = self.credits.font:getWidth(self.credits.content)
-    love.graphics.print(self.credits.content, self.credits.font, (self.window_width - size_credits) - 100, self.credits.margin)
+    love.graphics.print(self.credits.content, self.credits.font, (self.window_width - size_credits) - 0.052 * self.window_width, self.credits.margin)
 
     -- START_BUTTON "iniciar"
     self.start_button:draw()

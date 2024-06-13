@@ -28,14 +28,14 @@ function ResultScreen:init(window_width, window_height, option)
         content = option.total_text,
         font = love.graphics.newFont("fonts/Montserrat/static/Montserrat-Medium.ttf", 0.03 * window_height),
         color = colors.off_white,
-        x = window_width - 0.5 * window_width,
+        x = window_width - 0.65 * window_width,
         y = 0.3 * window_height
     }
 
     -- image 
     self.image = ImageObj(
         option.path,
-        0.25 * window_width,
+        0.10 * window_width,
         0.3 * window_height,
         0.2 * window_width,
         0.42 * window_height
