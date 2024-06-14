@@ -79,7 +79,7 @@ function InitialScreen:draw()
     -- subtitle
     colors:setColor(self.content.color)
     size_content = self.content.font:getWidth(self.content.content)
-    love.graphics.print(self.content.content, self.content.font, (self.window_width-size_title-size_content  / 2), self.content.margin)
+    love.graphics.print(self.content.content, self.content.font, (self.window_width+size_title)/2-size_content, self.content.margin)
 
     -- credits
     colors:setColor(self.credits.color)

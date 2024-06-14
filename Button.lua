@@ -33,5 +33,5 @@ function Button:draw()
    text_width = self.text.font:getWidth(self.text.content)
    text_height = self.text.font:getHeight(self.text.content)
    -- TO-DO: understand better how centralization works (+5)
-   love.graphics.print(self.text.content, self.text.font, self.x + (self.width - text_width) / 2, self.y + (self.height - text_height) / 2 + 5)
+   love.graphics.print(self.text.content, self.text.font, self.x + (self.width - text_width) / 2, self.y + (self.height - text_height) / 2)
 end

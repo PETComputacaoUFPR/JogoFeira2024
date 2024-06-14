@@ -19,8 +19,8 @@ math.randomseed(os.time())
 function love.load()
     -- window dimensions
     love.window.setMode(0, 0)
-    WINDOW_WIDTH = love.graphics.getWidth()
-    WINDOW_HEIGHT = love.graphics.getHeight()
+    WINDOW_WIDTH = love.graphics.getWidth() * 7.2 / 6.8
+    WINDOW_HEIGHT = love.graphics.getHeight() 
     print(WINDOW_WIDTH, WINDOW_HEIGHT)
     love.window.setMode(WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = true,
@@ -87,7 +87,7 @@ end
 function love.draw()
     love.graphics.setColor(255,255,255)
     -- desenha o grandiente como background
-    love.graphics.draw(mesh_r, -0.15*WINDOW_WIDTH, 0, -0.15, 1.15*WINDOW_WIDTH, 1.5*WINDOW_HEIGHT)
+    love.graphics.draw(mesh_r, -0.15*WINDOW_WIDTH, 0, -0.15, 1.3*WINDOW_WIDTH, 1.5*WINDOW_HEIGHT)
 
     -- screen elements
     screen:draw()
