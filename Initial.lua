@@ -16,10 +16,10 @@ function InitialScreen:init(window_width, window_height)
 
     -- title that shows in initial screen
     self.title = {
-        content = "Jogo da Feira",
+        content = "Feirinho da Lâmpada",
         font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.05 * window_height),
         color = colors.off_white,
-        margin = 0.046 * window_height
+        margin = 0.065 * window_height
     }
 
     -- subtitle to the initial screen
@@ -27,7 +27,7 @@ function InitialScreen:init(window_width, window_height)
         content = "2024",
         font = love.graphics.newFont("fonts/Press_Start_2P/PressStart2P-Regular.ttf", 0.03 * window_height),
         color = colors.off_white,
-        margin = 0.092 * window_height
+        margin = self.title.margin + 0.05 * window_height
     }
 
     -- credits to the initial screen

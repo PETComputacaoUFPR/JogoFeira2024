@@ -19,7 +19,7 @@ math.randomseed(os.time())
 function love.load()
     -- window dimensions
     love.window.setMode(0, 0)
-    WINDOW_WIDTH = love.graphics.getWidth() * 7.2 / 6.8
+    WINDOW_WIDTH = love.graphics.getWidth() 
     WINDOW_HEIGHT = love.graphics.getHeight() 
     print(WINDOW_WIDTH, WINDOW_HEIGHT)
     love.window.setMode(WINDOW_WIDTH, WINDOW_HEIGHT, {
@@ -29,7 +29,7 @@ function love.load()
     })
 
     -- title of game
-    love.window.setTitle("JogoDaFeira")
+    love.window.setTitle("FeirinhoLampada")
 
     -- mesh for background
     mesh_r = mesh:gradientMesh("vertical", 
